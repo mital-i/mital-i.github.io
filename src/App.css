@@ -42,8 +42,6 @@
 }
 
 .container {
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  /* Add other styles like z-index to control stacking order */
+  display: flex; /* Enable Flexbox layout */
+  justify-content: space-between; /* Space the links evenly */
 }

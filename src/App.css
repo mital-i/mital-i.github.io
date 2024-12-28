@@ -41,7 +41,29 @@
   color: #888;
 }
 
-.container {
-  display: flex; /* Enable Flexbox layout */
-  justify-content: space-between; /* Space the links evenly */
+.linkedin {
+  display: flex;
+  justify-content: space-between;
+  padding: 10mm;
+}
+.resume {
+  display: flex;
+  justify-content: space-between;
+  padding: 10mm;
+}
+.youtube {
+  display: flex;
+  justify-content: space-between;
+  padding: 10mm;
+}
+.footer {
+  display: flex;
+  justify-content: center; /* Center the links horizontally */
+  align-items: center; /* Center the links vertically */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 8px;
+  left: 0; /* Add this line */
+  right: 0; /* Add this line */ 
 }

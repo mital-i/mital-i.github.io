@@ -67,3 +67,11 @@
   left: 0; /* Add this line */
   right: 0; /* Add this line */ 
 }
+
+.about {
+  text-align: left;
+}
+
+.contact {
+  text-align: left;
+}

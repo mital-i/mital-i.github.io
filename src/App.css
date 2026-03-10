@@ -12,9 +12,35 @@
 }
 
 .hero {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   border-left: 2px solid var(--color-mint);
   padding-left: 2rem;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.headshot {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-mint);
+  box-shadow: 0 0 20px rgba(59, 186, 156, 0.2);
+  background: var(--glass-bg);
+}
+
+.hero-text h1 {
+  margin-bottom: 0.5rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 3.5rem;
+  color: var(--color-text-bright);
+  line-height: 1;
 }
 
 .hero h1 {

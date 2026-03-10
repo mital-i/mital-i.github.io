@@ -95,7 +95,6 @@ function App() {
 
           <aside className="sidebar">
             <div className="card">
-              <h3>Contact</h3>
               <div className="contact-item">
                 <a href="mailto:mitaliactive@gmail.com"><span className="contact-label">Email</span></a>
               </div>

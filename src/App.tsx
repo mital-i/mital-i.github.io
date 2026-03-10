@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom'
 import './App.css'
 import NeuralBackground from './components/NeuralBackground'
+import ProjectCard, { Project } from './components/ProjectCard'
 
 const About = () => (
   <section className="about-section animate-fade-in">
@@ -18,6 +19,38 @@ const About = () => (
     </p>
   </section>
 )
+
+
+const Projects = () => {
+  const projects: Project[] = [
+    {
+      title: "EcoScape",
+      description: "Create customized garden designs based on user's location and environmental conditions. After designing their garden, they are shown a sustainability score- a heuristic to evaluate the environmental impact of their design.",
+      tags: ["Python", "Flora API", "React"],
+      link: "https://devpost.com/software/ecoscape?ref_content=my-projects-tab&ref_feature=my_projects"
+    },
+    {
+      title: "UCI BioSci Research Explorer",
+      description: "Streamlined grant discovery and research collaboration; soon expanding to School of Medicine! ",
+      tags: ["NLP", "Python", "JavaScript"],
+      link: "https://research.bio.uci.edu/research-explorer/"
+    },
+    // {
+    //   title: "Embedded Multivariate Analysis",
+    //   description: "Research project on adapting attention mechanisms for time-series data in embedded systems.",
+    //   tags: ["Embedded", "Time-Series", "ML"],
+    //   github: "https://github.com/mital-i"
+    // }
+  ];
+
+  return (
+    <section className="projects-grid-container animate-fade-in">
+      <div className="project-grid">
+        {projects.map((p, i) => <ProjectCard key={i} project={p} />)}
+      </div>
+    </section>
+  );
+}
 
 const PagePlaceholder = ({ title }: { title: string }) => (
   <section className="about-section animate-fade-in">
@@ -55,7 +88,7 @@ function App() {
           <Routes>
             <Route path="/" element={<About />} />
             <Route path="/blog" element={<PagePlaceholder title="Blog" />} />
-            <Route path="/projects" element={<PagePlaceholder title="Projects" />} />
+            <Route path="/projects" element={<Projects />} />
             <Route path="/publications" element={<PagePlaceholder title="Publications" />} />
             <Route path="/readinglist" element={<PagePlaceholder title="Reading List" />} />
           </Routes>

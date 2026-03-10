@@ -5,16 +5,16 @@ import NeuralBackground from './components/NeuralBackground'
 const About = () => (
   <section className="about-section animate-fade-in">
     <p>
-      I’m a Computer Science student at UC Irvine, and I'm interested in Machine Learning, Math, and Interpretability. 
+      I’m a Computer Science student at UC Irvine, and I'm interested in Machine Learning, Math, and Interpretability.
     </p>
     <p>
-      Last year, I joined the Mechanistic Interpretability research community online, and since then I have taken the AI Safety Technical Fellowship, the AI Safety Research Incubator, and the BlueDot AGI Strategy Course. I have also implemented a few papers using NDIF's new nnterp python library. 
+      Last year, I joined the Mechanistic Interpretability research community online, and since then I have taken the AI Safety Technical Fellowship, the AI Safety Research Incubator, and the BlueDot AGI Strategy Course. I have also implemented a few papers using NDIF's new nnterp python library.
     </p>
     <p>
       I was previously a SWE intern at Etsy, Fuerte, and BlackRock. I'm excited to pursure SWE full time after my graduation this Spring!
     </p>
     <p>
-      I’m a software engineer and a machine learning enthusiast, and recently I developed an interest in philosophy. 
+      I’m a software engineer and a machine learning enthusiast, and recently I developed an interest in philosophy.
     </p>
   </section>
 )
@@ -49,6 +49,7 @@ function App() {
             <NavLink to="/blog" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Blog</NavLink>
             <NavLink to="/projects" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Projects</NavLink>
             <NavLink to="/publications" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Publications</NavLink>
+            <NavLink to="/readinglist" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Reading List</NavLink>
           </nav>
 
           <Routes>

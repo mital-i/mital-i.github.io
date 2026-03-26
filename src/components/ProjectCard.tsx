@@ -1,6 +1,7 @@
 interface Project {
     title: string;
     description: string;
+    notes?: string;
     tags: string[];
     link?: string;
     github?: string;

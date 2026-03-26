@@ -26,12 +26,14 @@ const Projects = () => {
     {
       title: "EcoScape",
       description: "Create customized garden designs based on user's location and environmental conditions. After designing their garden, they are shown a sustainability score- a heuristic to evaluate the environmental impact of their design.",
+      notes: "Winner of the IrvineHacks Sustainability Track!",
       tags: ["Python", "Flora API", "React"],
       link: "https://devpost.com/software/ecoscape?ref_content=my-projects-tab&ref_feature=my_projects"
     },
     {
       title: "UCI BioSci Research Explorer",
       description: "Streamlined grant discovery and research collaboration; soon expanding to School of Medicine! ",
+      notes: "Login with UCI credentials to use this tool", 
       tags: ["NLP", "Python", "JavaScript"],
       link: "https://research.bio.uci.edu/research-explorer/"
     },

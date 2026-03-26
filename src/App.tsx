@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-do
 import './App.css'
 import NeuralBackground from './components/NeuralBackground'
 import ProjectCard, { Project } from './components/ProjectCard'
+import BlogPost from './components/BlogPost'
 
 const About = () => (
   <section className="about-section animate-fade-in">
@@ -37,12 +38,6 @@ const Projects = () => {
       tags: ["NLP", "Python", "JavaScript"],
       link: "https://research.bio.uci.edu/research-explorer/"
     },
-    // {
-    //   title: "Embedded Multivariate Analysis",
-    //   description: "Research project on adapting attention mechanisms for time-series data in embedded systems.",
-    //   tags: ["Embedded", "Time-Series", "ML"],
-    //   github: "https://github.com/mital-i"
-    // }
   ];
 
   return (
@@ -54,12 +49,39 @@ const Projects = () => {
   );
 }
 
-const PagePlaceholder = ({ title }: { title: string }) => (
-  <section className="about-section animate-fade-in">
-    <h1>{title}</h1>
-    <p style={{ marginTop: '2rem' }}>coming soon</p>
-  </section>
-)
+const BlogPage = () => {
+  const posts = [
+    {
+      title: 'SAE Feature Matchmaking (Layer-to-Layer)',
+      url: 'https://www.lesswrong.com/posts/zLFD8PHoC8tthMopn/sae-feature-matchmaking-layer-to-layer-1',
+      excerpt: 'About \'Mechanistic Permutability: Match Features Across Layers\', an interesting paper on matching features detected with Spare Autoencoders across multiple layers of the Transformer neural network. ',
+      publishedAt: '2024-02-15'
+    },
+    {
+      title: 'Paying attention to Attention Sinks',
+      url: 'https://www.lesswrong.com/posts/mMhxFAwxjL8tnYgsY/paying-attention-to-attention-sinks',
+      excerpt: 'Researcher found that transformers contain a "Dark Subspace" to store information that isn\'t intended for the output layer. The attention sink concept is a specific manifestation of this, where the model learns to dump the remaining attention from the Softmax into the first ([BOS]) token.',
+      publishedAt: '2024-06-03'
+    },
+    {
+      title: 'Thoughts and experiences on using AI for learning',
+      url: 'https://www.lesswrong.com/posts/K3dvSxxYKNdDjXCmS/thoughts-and-experiences-on-using-ai-for-learning',
+      excerpt: 'As this is my first blog post, I begin with an introduction of myself to establish my background. I am finishing my last year of my undergraduate studies, with a degree in Computer Science. My primary concern, and the thesis of this post, is the potential for epistemic failure caused by outsourcing foundational cognitive tasks to Large Language Models (LLMs).',
+      publishedAt: '2024-09-01'
+    }
+  ]
+
+  return (
+    <section className="blog-grid-container animate-fade-in">
+      <h1>Blog</h1>
+      <div className="blog-grid">
+        {posts.map((post, i) => (
+          <BlogPost key={i} title={post.title} url={post.url} excerpt={post.excerpt} />
+        ))}
+      </div>
+    </section>
+  )
+}
 
 function App() {
   return (
@@ -83,16 +105,14 @@ function App() {
             <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>About</NavLink>
             <NavLink to="/blog" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Blog</NavLink>
             <NavLink to="/projects" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Projects</NavLink>
-            <NavLink to="/publications" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Publications</NavLink>
-            <NavLink to="/readinglist" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Reading List</NavLink>
+            {/* <NavLink to="/publications" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Publications</NavLink> */}
           </nav>
 
           <Routes>
             <Route path="/" element={<About />} />
-            <Route path="/blog" element={<PagePlaceholder title="Blog" />} />
+            <Route path="/blog" element={<BlogPage />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/publications" element={<PagePlaceholder title="Publications" />} />
-            <Route path="/readinglist" element={<PagePlaceholder title="Reading List" />} />
+            {/* <Route path="/publications" element={<PagePlaceholder title="Publications" />} /> */}
           </Routes>
 
           <aside className="sidebar">

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, NavLink, useLocation } from 'react-router-dom'
 import './App.css'
 import NeuralBackground from './components/NeuralBackground'
 import ProjectCard, { Project } from './components/ProjectCard'
@@ -83,9 +83,12 @@ const BlogPage = () => {
   )
 }
 
-function App() {
+function AppContent() {
+  const location = useLocation()
+  const isHome = location.pathname === '/'
+
   return (
-    <Router>
+    <>
       <NeuralBackground />
       <main className="container animate-fade-in">
         <div className="decoration-line"></div>
@@ -115,21 +118,31 @@ function App() {
             {/* <Route path="/publications" element={<PagePlaceholder title="Publications" />} /> */}
           </Routes>
 
-          <aside className="sidebar">
-            <div className="card">
-              <div className="contact-item">
-                <a href="mailto:mitaliactive@gmail.com"><span className="contact-label">Email</span></a>
+          {isHome && (
+            <aside className="sidebar">
+              <div className="card">
+                <div className="contact-item">
+                  <a href="mailto:mitaliactive@gmail.com"><span className="contact-label">Email</span></a>
+                </div>
+                <div className="contact-item">
+                  <a href="https://www.linkedin.com/in/mitali-m/" target="_blank" rel="noopener noreferrer"><span className="contact-label">LinkedIn</span></a>
+                </div>
+                <div className="contact-item">
+                  <a href="https://x.com/http_mitali" target="_blank" rel="noopener noreferrer"><span className="contact-label">X</span></a>
+                </div>
               </div>
-              <div className="contact-item">
-                <a href="https://www.linkedin.com/in/mitali-m/" target="_blank" rel="noopener noreferrer"><span className="contact-label">LinkedIn</span></a>
-              </div>
-              <div className="contact-item">
-                <a href="https://x.com/http_mitali" target="_blank" rel="noopener noreferrer"><span className="contact-label">X</span></a>
-              </div>
-            </div>
-          </aside>
+            </aside>
+          )}
         </div>
       </main>
+    </>
+  )
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   )
 }
